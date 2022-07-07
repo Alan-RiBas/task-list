@@ -18,10 +18,10 @@
     }
     
     public function recuperar(){//F.READ
-      $query = 'select into tb_tarefas(tarefa) values(:tarefa)';//usando ':tarefa' para tratar com bindValue e evitar SQLinjection
+      $query = 'select id, id_status, tarefa from tb_tarefas';//usando ':tarefa' para tratar com bindValue e evitar SQLinjection
       $statemant = $this->conn->prepare($query);
-      $statemant->bindValue(':tarefa', $this->tarefa->__get('tarefa'));//atraves do metodo __get estamos recuperando o POST('tarefa') e passando via bindValue
       $statemant->execute();
+      return $statemant->fetchAll(PDO::FETCH_OBJ);
     }
      
     public function atualizar(){ //F.UPDATE
