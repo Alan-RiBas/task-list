@@ -18,7 +18,13 @@
     }
     
     public function recuperar(){//F.READ
-      $query = 'select id, id_status, tarefa from tb_tarefas';//usando ':tarefa' para tratar com bindValue e evitar SQLinjection
+      $query = 'select
+                   t.id, s.status, t.tarefa
+                from
+                   tb_tarefas as t
+                   left join tb_status as s 
+                   on(t.id_status = s.id)
+                ';//usando ':tarefa' para tratar com bindValue e evitar SQLinjection
       $statemant = $this->conn->prepare($query);
       $statemant->execute();
       return $statemant->fetchAll(PDO::FETCH_OBJ);
