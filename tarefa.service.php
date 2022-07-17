@@ -51,5 +51,23 @@
       $statemant->bindValue(':id', $this->tarefa->__get('id'));
       $statemant->execute();
     }      
+    public function recuperarTarefasPendentes(){//F."UPDATE"
+      $query = 'select
+                   t.id, s.status, t.tarefa
+                from
+                   tb_tarefas as t
+                   left join tb_status as s 
+                   on(t.id_status = s.id)
+                where
+                   t.id_status = :id_status  
+
+                ';//usando ':tarefa' para tratar com bindValue e evitar SQLinjection
+      $statemant = $this->conn->prepare($query);
+      $statemant->bindValue(':id_status', $this->tarefa->__get('id_status'));
+      $statemant->execute();
+      return $statemant->fetchAll(PDO::FETCH_OBJ);
+    }      
+
+    
   }  
 ?>

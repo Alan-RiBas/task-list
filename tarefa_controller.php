@@ -18,9 +18,9 @@
 
     $tarefa = new Tarefa();
     $conexao = new Conexao();
-
     $tarefaService = new TarefaService($conexao, $tarefa);
     $tarefas = $tarefaService->recuperar();
+
   }else if($acao == 'atualizar'){  //F.UPDATE
     $tarefa = new Tarefa(); 
     $tarefa->__set('id', $_POST['id']);
@@ -29,8 +29,11 @@
     $conexao = new Conexao();
     $tarefaService = new TarefaService($conexao, $tarefa);
     if($tarefaService->atualizar()){
-      header('location: todas_tarefas.php');
-
+      if(isset($_GET['pag'])&& $_GET['pag'] == 'index'){
+        header('location: index.php');
+      }else{
+        header('location: todas_tarefas.php');
+      }  
     }
   }else if($acao == 'remover'){
     $tarefa = new Tarefa();
@@ -38,7 +41,11 @@
     $conexao = new Conexao;
     $tarefaService = new TarefaService($conexao, $tarefa);
     $tarefaService->remover();
-    header('location: todas_tarefas.php');
+    if(isset($_GET['pag'])&& $_GET['pag'] == 'index'){
+      header('location: index.php');
+    }else{
+      header('location: todas_tarefas.php');
+    }  
   }else if($acao == 'marcarRealizada'){
     $tarefa = new Tarefa();
     $tarefa->__set('id', $_GET['id']);
@@ -46,8 +53,19 @@
     $conexao = new Conexao;
     $tarefaService = new TarefaService($conexao, $tarefa);
     $tarefaService->marcarRealizada();
-
+    if(isset($_GET['pag'])&& $_GET['pag'] == 'index'){
+      header('location: index.php');
+    }else{
+      header('location: todas_tarefas.php');
+    }  
     
     header('location: todas_tarefas.php');
+
+  }else if($acao == 'recuperarTarefasPendentes'){
+    $tarefa = new Tarefa();
+    $tarefa->__set('id_status', 1);
+    $conexao = new Conexao();
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    $tarefas = $tarefaService->recuperarTarefasPendentes();
   }
 ?>
