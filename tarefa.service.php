@@ -44,5 +44,12 @@
       $statemant->bindValue(':id', $this->tarefa->__get('id'));
       $statemant->execute();
     }      
+    public function marcarRealizada(){//F."UPDATE"
+      $query = 'update tb_tarefas set id_status = :id_status where id = :id';
+      $statemant = $this->conn->prepare($query);
+      $statemant->bindValue(':id_status', $this->tarefa->__get('id_status'));
+      $statemant->bindValue(':id', $this->tarefa->__get('id'));
+      $statemant->execute();
+    }      
   }  
 ?>
