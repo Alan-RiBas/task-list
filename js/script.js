@@ -39,3 +39,7 @@ function editar(id, txt_tarefa){
   //incluir o form na pagina
   tarefa.insertBefore(form, tarefa[0])
 }
+
+function remover(id){
+  location.href = 'todas_tarefas.php?acao=remover&id='+ id
+}
