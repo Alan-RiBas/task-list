@@ -14,12 +14,22 @@
     $tarefaService = new TarefaService($conexao, $tarefa);//instancia das F.CRUD
     $tarefaService->inserir();
     header('Location: nova_tarefa.php?inclusao=1');
-   }else if($acao == 'recuperar'){
+   }else if($acao == 'recuperar'){ // F.READ
 
     $tarefa = new Tarefa();
     $conexao = new Conexao();
 
     $tarefaService = new TarefaService($conexao, $tarefa);
     $tarefas = $tarefaService->recuperar();
+  }else if($acao == 'atualizar'){  //F.UPDATE
+    $tarefa = new Tarefa(); 
+    $tarefa->__set('id', $_POST['id']);
+    $tarefa->__set('tarefa', $_POST['tarefa']);
+
+    $conexao = new Conexao();
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    if($tarefaService->atualizar()){
+      header('location: todas_tarefas.php');
+    }
   }
 ?>
