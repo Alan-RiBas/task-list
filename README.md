@@ -10,7 +10,7 @@ Projeto CRUD simples, para atender a necessidade de gerir o tempo e afazeres, on
 
 
 
-Funcionalidade 1: Na aba de "Nova tarefa" é onde pode-se iniciar sua rotina com o Task list, criando uma tarefas.
+Funcionalidade 1: Na aba de "Nova tarefa" é onde pode-se iniciar sua rotina com o APP, criando uma tarefa.
 
   ![Criando Tarefas](img/Cirando%20Tarefas.gif)
 
@@ -18,21 +18,21 @@ Funcionalidade 2: Na aba de "Tarefas pendentes", exibe as tarefas que estão com
 
   ![Tarefas pendentes](img/tarefas-pendentes-MD.png)
 
-Funcionalidade 3: Na aba de "Todas Tarefas", é possivel visualizar e interagir com as tarefas, assim podendo editar.
+Funcionalidade 3: Na aba de "Todas Tarefas", é possivel visualizar e interagir com as tarefas, assim podendo edita-las.
 
   ![Editanto Tarefas](img/Editando%20Tarefas.gif)
 
-Funcionalidade 3a: Também na aba de "Todas tarefas", podemos marcar a tarefa como realizado, assim, a tarefa não sera exibida na aba "Tarefas Pendentes".
+Funcionalidade 3a: Também na aba de "Todas tarefas", podemos marcar a tarefa como realizada, assim, a tarefa deixará de ser exibida na aba "Tarefas Pendentes".
 
   ![Marcar tarefa como Realizada](img/Tarefa%20Realizada.gif)
 
-Funcionalidade 3b: Também podemos excluir as tarefas, caso já a tenha realizada ou por não ser mais necessária.  
+Funcionalidade 3b: Também podemos excluir as tarefas caso já tenha sido realizada ou por não ser mais necessária.  
 
   ![Excluir as tarefas](img/Excluir%20Tarefas.gif)
 
 ## 📁 Acesso ao projeto
 
-**Você deve baixar a branch [principal(main)](https://github.com/Alan-RiBas/task-list) onde tera o front-end, e uma pasta separada para os controllers, que você deve baixar na branch [secundaria(controllers)](https://github.com/Alan-RiBas/task-list/tree/controllers).**
+**Você deve baixar a branch [principal(main)](https://github.com/Alan-RiBas/task-list) onde tera o front-end, e uma pasta separada para os controllers que funcionará como o back-end, que você deve baixar na branch [secundaria(controllers)](https://github.com/Alan-RiBas/task-list/tree/controllers).**
 
 ## 🛠️ Abrir e rodar o projeto
 
