@@ -32,7 +32,7 @@ Funcionalidade 3b: Também podemos excluir as tarefas caso já tenha sido realiz
 
 ## 📁 Acesso ao projeto
 
-**Você deve baixar a branch [principal(main)](https://github.com/Alan-RiBas/task-list) onde tera o front-end, e uma pasta separada para os controllers que funcionará como o back-end, que você deve baixar na branch [secundaria(controllers)](https://github.com/Alan-RiBas/task-list/tree/controllers).**
+**Você deve baixar a branch [principal(main)](https://github.com/Alan-RiBas/task-list) onde terá o front-end, e uma pasta separada para os controllers que funcionará como o back-end, que você deve baixar na branch [secundaria(controllers)](https://github.com/Alan-RiBas/task-list/tree/controllers).**
 
 ## 🛠️ Abrir e rodar o projeto
 
